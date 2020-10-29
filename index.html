@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html>
+<?php
+session_start();
+if(empty($_SESSION["authenticated"]) || $_SESSION["authenticated"] != 'true') {
+    header('Location: login.php');
+}
+?>
+
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <header>
+
+        </header>
+
+        <body>
+            <div class="container">
+                <div class="logo">
+                    <img class="logo-image" src="logo.png" alt="">
+                </div>
+            </div>
+            <div class="container header">
+                <h2 class="display-3 h3-emissao">Emissão de Certificado</h2>
+            </div>
+            <form action="certificado.php" method="get" class="container" id="container">
+                <div class="carding">
+                    <div class="text-title m-4">
+                        <h2 class="display-4"></h2>
+                    </div>
+                    <div class="wrapper">
+
+                        <div class="container-input m-4">
+                            <small class="m-2 breakpont-center">Informe o nome a ser inserido no seu certificado</small>
+                            <input type="text" class="form-control inputs m-2 " placeholder="Seu nome..." aria-label="Seu nome.." name="nome" id="nome" aria-describedby="basic-addon1" style="outline: none;">
+                        </div>
+
+                        <div class="container m-2">
+                            <button type="submit" class="btn btns m-2">Emitir Certificado</button>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="image-shadown">
+                    <img class="rodrigo" src="caras.png" alt="">
+                </div>
+
+
+                <div class="container flex-2">
+                    <small id="strong-title">Palavras-chaves</small>
+                </div>
+                <div class="container flex">
+
+                    <div class="gap">
+                        <input type="checkbox" id="todo" name="todo" value="todo">
+                        <label for="todo" data-content="Emoção">Emoção</label>
+                    </div>
+                    <div class="gap">
+                        <input type="checkbox" id="todo" name="todo" value="todo">
+                        <label for="todo" data-content="Ação">Ação</label>
+                    </div>
+                    <div class="gap">
+                        <input type="checkbox" id="todo" name="todo" value="todo">
+                        <label for="todo" data-content="Geração">geração</label>
+                    </div>
+                    <div class="gap">
+                        <input type="checkbox" id="todo" name="todo" value="todo">
+                        <label for="todo" data-content="resultados">resultados</label>
+                    </div>
+                    <div class="gap">
+                        <input type="checkbox" id="todo" name="todo" value="todo">
+                        <label for="todo" data-content="potencial">potencial</label>
+                    </div>
+                    <div class="gap">
+                        <input type="checkbox" id="todo" name="todo" value="todo">
+                        <label for="todo" data-content="extraordinario--">extraordinário</label>
+                    </div>
+                </div>
+
+                </div>
+
+
+        </body>
+        <style>
+            body {
+                font-size: 1rem;
+            }
+            
+            @media (min-width: 320px) {
+                #container {
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: center;
+                }
+            }
+            
+            .carding {
+                width: 80vh;
+                padding: 8px;
+                position: absolute;
+                top: 55%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: none;
+                border-radius: 15px;
+            }
+            
+            .text-title {
+                margin: 8px;
+            }
+            
+            .container-input {
+                margin: 8px;
+            }
+            
+            .image-shadown {
+                position: absolute;
+                top: 30%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+            @media (min-width: 320px) {
+                .image-shadown {
+                    position: absolute;
+                    top: 30%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+                .rodrigo {
+                    width: 100% !important;
+                }
+            }
+            /* =========================================================================
+                LOGO
+            */
+            
+            .logo>.logo-image {
+                width: 10%;
+            }
+            
+            .logo-image {
+                margin: 12px;
+                left: 0;
+                position: absolute;
+            }
+            
+            @media (min-width: 320px) {
+                .logo>.logo-image {
+                    width: 15%;
+                }
+            }
+            /*============================================================================
+                Logo
+            */
+            /* ===============================================================
+                INPUT
+            */
+            
+            @media (min-width: 1200px) {
+                .inputs {
+                    -webkit-box-shadow: 10px 10px 37px -32px rgba(191, 181, 191, 1);
+                    -moz-box-shadow: 10px 10px 37px -32px rgba(191, 181, 191, 1);
+                    box-shadow: 10px 10px 37px -32px rgba(191, 181, 191, 1);
+                    border: 1px solid #9ad3bc;
+                    border-radius: 4;
+                    border-bottom: 1px solid #9ad3bc;
+                    transition: 200ms;
+                }
+                .inputs:focus {
+                    border: 1px solid #9ad3bc;
+                    border-bottom: none;
+                    outline: none !important;
+                }
+                *:fucos {
+                    outline: none;
+                }
+            }
+            
+            .inputs {
+                -webkit-box-shadow: 10px 10px 37px -32px rgba(191, 181, 191, 1);
+                -moz-box-shadow: 10px 10px 37px -32px rgba(191, 181, 191, 1);
+                box-shadow: 10px 10px 37px -32px rgba(191, 181, 191, 1);
+                border: 1px solid #9ad3bc;
+                border-radius: 4;
+                border-bottom: 1px solid #9ad3bc;
+                transition: 200ms;
+            }
+            
+            .inputs:focus {
+                border: 1px solid #9ad3bc;
+                border-bottom: none;
+                outline: none !important;
+            }
+            
+            *:fucos {
+                outline: none;
+            }
+            
+            @media only screen and (min-width: 320px) {
+                .breakpont-center {
+                    position: absolute;
+                    top: -25px;
+                    left: 50%;
+                    font-size: 1rem;
+                    transform: translate(-50%, -50%);
+                }
+                .inputs {
+                    width: 50%;
+                    position: absolute;
+                    top: 1.25rem;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            /* ===============================================================
+                FIm INPUT
+            */
+            
+            @media (min-width: 320px) {
+                .btns {
+                    position: absolute;
+                    left: 50%;
+                    top: 5.45rem;
+                    margin-top: 1rem;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            
+            .btns {
+                background: #9ad3bc;
+                width: 180px;
+                padding: 8px;
+                transition: .5s;
+            }
+            
+            .btns:hover {
+                background: #73bea0;
+            }
+            
+            #container {
+                margin: 8px;
+            }
+            /*=====================================================
+             HEADER 
+             */
+            
+            .header {
+                text-align: center;
+                top: 5%;
+                left: 10%;
+                position: absolute;
+                text-align: center;
+            }
+            
+            .header>.h3-emissao {
+                font-size: 2rem;
+            }
+            
+            @media (min-width: 320px) {
+                .header {
+                    left: 4%;
+                }
+            }
+            /*=====================================================
+                    Fim HEADER 
+             */
+            
+            .flex {
+                display: flex;
+                flex-flow: row;
+                position: absolute;
+                top: 75%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+            @media only screen and (min-width: 320px) {
+                .flex {
+                    flex-flow: column;
+                    height: 20px;
+                }
+                .flex-2 {
+                    top: 25%;
+                }
+                .flex,
+                .flex-2 {
+                    margin-top: .40rem;
+                }
+            }
+            
+            .flex>.gap {
+                flex-basis: 200px;
+            }
+            
+            .flex-2 {
+                position: absolute;
+                top: 71%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+            #strong-title {
+                flex-basis: 150px;
+                font-weight: 800;
+            }
+            
+            input[type="checkbox"] {
+                position: relative;
+                width: 1.5em;
+                height: 1.5em;
+                color: #363839;
+                border: 1px solid #bdc1c6;
+                border-radius: 4px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                outline: 0;
+                cursor: pointer;
+                -webkit-transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+                transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+            }
+            
+            input[type="checkbox"]::before {
+                position: absolute;
+                content: '';
+                display: block;
+                top: 4px;
+                left: 7px;
+                width: 8px;
+                height: 17px;
+                border-style: solid;
+                border-color: #fff;
+                border-width: 0 2px 2px 0;
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                opacity: 0;
+            }
+            
+            input[type="checkbox"]:checked {
+                color: #fff;
+                border-color: #73bea0;
+                background: #73bea0;
+            }
+            
+            input[type="checkbox"]:checked::before {
+                opacity: 1;
+            }
+            
+            input[type="checkbox"]:checked~label::before {
+                -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            }
+            
+            label {
+                position: relative;
+                cursor: pointer;
+                font-size: .80rem;
+                font-weight: 600;
+                padding: 8px;
+                width: 50px;
+                font-size: 1rem;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            
+            label::before {
+                position: absolute;
+                content: attr(data-content);
+                color: #9c9e9f;
+                -webkit-clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+                clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+                text-decoration: line-through;
+                text-decoration-thickness: 3px;
+                -webkit-text-decoration-color: #363839;
+                text-decoration-color: #363839;
+                -webkit-transition: -webkit-clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                transition: -webkit-clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                transition: clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-clip-path 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+        </style>
+        <style>
+
+        </style>
+
+        <!--emoção Ação geração resultados potencial extraordinario-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+
+</html>
